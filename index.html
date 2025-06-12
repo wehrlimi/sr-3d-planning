@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Surface Deformation Visualization</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      margin: 1rem 0;
+    }
+    a.button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+    a.button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>3D Surface Deformation Visualization</h1>
+
+  <p>This page presents an interactive visualization of deformation between two 3D surface meshes. It supports supplementary material for a scientific submission. No personal or institutional information is included.</p>
+
+  <h2>Interactive Viewer</h2>
+  <p>
+    You can launch the 3D visualization below:
+  </p>
+  <p>
+    <a href="deformation_viewer.html" class="button" target="_blank">▶ Launch Interactive Viewer</a>
+  </p>
+
+  <h2>Preview</h2>
+  <img src="images/viewer-preview.png" alt="3D Viewer Preview">
+
+  <h2>Description</h2>
+  <p>
+    The viewer shows color-mapped deformation magnitudes and directional displacement vectors between a reference and deformed surface mesh. Red vectors indicate expansion along the surface normal; blue indicates inward deformation.
+  </p>
+
+  <h2>Notes</h2>
+  <ul>
+    <li>The underlying code uses <code>vedo</code>, <code>numpy</code>, and <code>scipy</code>.</li>
+    <li>Meshes are anonymized synthetic samples for visualization purposes.</li>
+    <li>Source code and data are intentionally omitted for blind review.</li>
+  </ul>
+
+</body>
+</html>
