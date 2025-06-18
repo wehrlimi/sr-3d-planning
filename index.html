@@ -1,65 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>3D Surface Deformation Visualization</title>
+  <meta charset="utf-8">
+  <title>3D Viewer and Image Comparison</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2rem;
-      max-width: 800px;
-    }
-    h1, h2 {
-      color: #333;
-    }
-    img {
-      max-width: 100%;
-      border: 1px solid #ccc;
-      margin: 1rem 0;
-    }
-    a.button {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background-color: #007acc;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 1rem;
-    }
-    a.button:hover {
-      background-color: #005fa3;
-    }
-  </style>
+
+  <!-- Fonts and Bulma -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <!-- x3dom (for 3D rendering) -->
+  <script src="https://www.x3dom.org/download/x3dom.js"></script>
+  <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css">
+
+  <!-- img-comparison-slider -->
+  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css">
 </head>
+
 <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-3 has-text-centered">3D Viewer and Image Comparison</h1>
+      <p class="has-text-centered">This viewer displays an .x3d file exported from Vedo, alongside a before/after comparison slider.</p>
+    </div>
+  </section>
 
-  <h1>3D Surface Deformation Visualization</h1>
+  <!-- 3D X3D Viewer Section -->
+  <section class="section">
+    <div class="container has-text-centered">
+      <h2 class="title is-4">3D X3D Visualization</h2>
+      <x3d width='960px' height='781px'>
+        <scene>
+          <Inline url="deformation_viewer_lightweight_V2.x3d"> </Inline>
+        </scene>
+      </x3d>
+      <p class="is-size-6 mt-3">If the viewer doesn't show, ensure your browser is allowed to load local files. <a href="https://github.com/marcomusy/vedo/tree/master/examples/other/export_x3d.py">See this guide</a>.</p>
+    </div>
+  </section>
 
-  <p>This page presents an interactive visualization of deformation between two 3D surface meshes. It supports supplementary material for a scientific submission. No personal or institutional information is included.</p>
+  <!-- Image Comparison Slider Section -->
+  <section class="section">
+    <div class="container has-text-centered">
+      <h2 class="title is-4">Before / After Slider</h2>
+      <img-comparison-slider style="max-width: 100%; height: auto;">
+        <img slot="first" src="./images/Segmentation_before_Inp.png" alt="Before" />
+        <img slot="second" src="./images/Segmentation_after_Inp.png" alt="After" />
+      </img-comparison-slider>
+    </div>
+  </section>
 
-  <h2>Interactive Viewer</h2>
-  <p>
-    You can launch the 3D visualization below:
-  </p>
-  <p>
-    <a href="deformation_viewer_lightweight_V2.html" class="button" target="_blank">▶ Launch Interactive Viewer</a>
-  </p>
-
-  <h2>Preview</h2>
-  <img src="images/viewer-preview.png" alt="3D Viewer Preview">
-
-  <h2>Description</h2>
-  <p>
-    The viewer shows color-mapped deformation magnitudes and directional displacement vectors between a reference and deformed surface mesh. Red vectors indicate expansion along the surface normal; blue indicates inward deformation.
-  </p>
-
-  <h2>Notes</h2>
-  <ul>
-    <li>The underlying code uses <code>vedo</code>, <code>numpy</code>, and <code>scipy</code>.</li>
-    <li>Meshes are anonymized synthetic samples for visualization purposes.</li>
-    <li>Source code and data are intentionally omitted for blind review.</li>
-  </ul>
-
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Example template combining <a href="https://github.com/marcomusy/vedo">vedo</a> 3D viewer with a modern academic-style interface.
+        Image comparison slider powered by <code>img-comparison-slider</code>.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
